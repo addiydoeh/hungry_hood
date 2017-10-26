@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateMenuDataTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('menuDatas', function (Blueprint $table) {
+            $table->increments('menuDat_id');
+            $table->integer('menuDat_menu_id');
+            $table->string('menuDat_name');
+            $table->string('menuDat_type');
+            $table->string('menuDat_detail');
+            $table->integer('menuDat_language_id');
+            
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('menuDatas');
+    }
+}

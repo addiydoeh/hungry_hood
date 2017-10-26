@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateRelationAddressProvTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('relation_addr_provs', function (Blueprint $table) {
+            $table->increments('reAddr_id');
+            $table->integer('reAddr_address_id');
+            $table->integer('reAddr_prov_id');    
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('relation_addr_provs');
+    }
+}
